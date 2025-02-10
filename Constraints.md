@@ -51,3 +51,15 @@ In this example, an employee has a department_id. The department_id must be the 
 2. `FOREIGN KEY (department_id)`: make this constraint a foreign key assigned to the department_id field
 
 3. `REFERENCES departments(id)`: link the foreign field id from the departments table
+
+## Schema
+ Schema describes how data is organized within the db. \
+ Theres no perfect way to architect it. 
+
+ ## Relational Database
+ A *relational database* is a type of db that stores data so that it can be easily related to other data. A `user` can have many `tweets`. So relation between user and tweet.\
+ In a relational db:
+ 1. Data is typically represented in “tables”.
+ 2. Each table has “columns” or “fields” that hold attributes related to the record.
+ 3. Each row or entry in the table is called a record.
+ 4. Typically, each record has a unique Id called the primary key.
