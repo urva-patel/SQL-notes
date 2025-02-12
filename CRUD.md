@@ -60,3 +60,33 @@ DELETE FROM employees
 Data can be hard/impossible to restore. Heres some strategies:\
 **Backups**: Turn on automated backups, it takes a automated screenshot of your db on an interval.\
 **Soft Deletes**: This is where you dont actually delete the data, you just mark it deleted. You set a deleted_at date on the row, then in teh queries you ignore it. Automated backups are usually good enough rather than this.
+
+## Update Query in SQL
+The `UPDATE` statement allows up to update the fields of a record. We can even update many records depending on how we write the statement.
+```
+UPDATE employees
+SET job_title = 'Backend Engineer', salary = 150000
+WHERE id = 251;
+```
+
+## Object-Relational Mapping(ORMs)
+Its a tool that allows you to perform CRUD operations on a db using traditional programming language. It maps your db records to in-memory objects. For exmaple if we have this struct in code:
+```
+type User struct {
+    ID int
+    Name string
+    IsAdmin bool
+}
+```
+Then using ORM we can write code like this:
+```
+user := User{
+    ID: 10,
+    Name: "Lane",
+    IsAdmin: false,
+}
+
+// generates a SQL statement and runs it,
+// creating a new record in the users table
+db.Create(user)
+```
