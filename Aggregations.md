@@ -58,3 +58,11 @@ FROM songs
 GROUP BY album_id
 HAVING count > 5;
 ```
+This query returns the album_id and count of its songs, but only for albums with more than 5 songs.
+
+## Round
+`round()` allows you to specify both the value you wish to round and the precision to round it.
+If no precision given, it will round to nearest whole value
+```
+round(value, precision)
+```
